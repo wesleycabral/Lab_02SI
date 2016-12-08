@@ -1,0 +1,84 @@
+.jumbotron {
+	width: 600px;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+.table {
+	margin-top: 20px;
+}
+
+body {
+	background-image: url("http://og.infg.com.br/in/20273152-80c-5df/FT1500A/550/2013_667858657-2013112796509.jpg_20131129.jpg");
+}
+
+.selecionado {
+	background-color: #696969;
+}
+
+.form-control {
+	margin-bottom: 5px;
+}
+
+.negrito {
+	font-weight: bold;
+}
+
+.progress {
+	background-color: #D3D3D3;
+}
+
+.progress-bar {
+	background-color: #006400;
+}
+
+h3 {
+	color: white;
+	font-size: 20px;
+}
+
+h4 {
+	text-align: left;
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+hr {
+	border-color: #999;
+}
+
+.menu {
+	width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+	text-align: center;
+    padding: 16px 16px;
+    text-decoration: none;
+	
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+}

@@ -1,0 +1,58 @@
+<html ng-app="agendaDeTarefas">
+<head> 
+	<meta charset="UTF-8"/>
+	<title> Agenda de Tarefas</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/app.css">
+	<script src="angular/angular.js"></script>
+	<script src="js/app.js"></script>
+</head>
+<body ng-controller="listaTelefonicaCtrl">
+	<div class="menu">
+		<ul>
+			<li><a class="active" href="#home">Home</a></li>
+			<li><a href="https://github.com/wesleycabral/#contact" target="_blank">Contact</a></li>
+			<h3>{{app}}</h3>
+		</ul>		
+	</div>
+	
+	<div class="jumbotron">
+		<table ng-show="tarefas.length > 0" class="table">
+			<tr>
+				<th></th>
+				<th>Tarefa</th>
+				<th>Data</th>
+				<!--<th>Hora</th>-->
+				<th></th>
+			</tr>
+			<tr ng-class="{'selecionado negrito': tarefa.selecionado}" ng-repeat="tarefa in tarefas">
+				<td><input type="checkbox" ng-model="tarefa.selecionado"></td>
+				<td>{{tarefa.nome | uppercase}}</td>
+				<td>{{tarefa.data | date:'dd/MM/yyyy'}}</td>
+				<!--<td>{{tarefa.data | date:'HH:mm'}}</td>-->
+				<td><span ng-click="removeItem($index)">x</span></td>
+		</table>
+		<hr/>
+		<form name="tarefaForm">
+			<input class="form-control" type="text" ng-model="tarefa.nome" name="nome" placeholder="Tarefa" ng-required="true"/>
+			<input class="form-control" type="text" ng-model="tarefa.data" name="data" placeholder="Data" ng-required="true" ng-pattern="/^\d{2}/\d{2}/\d{4}$/"/>
+		</form>
+		<hr/>
+		<div class="progress" >
+			<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="{{percentage()}}" 
+				aria-valuemin="0" aria-valuemax="100" ng-style="{width : ( percentage() + '%' ) }">
+				<span id="percentage">{{percentage()}}%</span>
+			</div>
+		</div>
+		<div><h4>Total de Tarefas Concluidas: {{checkedCount()}}</h4></div>
+		<div><h4>Total de Tarefas a completar: {{tarefas.length - checkedCount()}}</h4></div>
+		
+		<div ng-show="tarefaForm.data.$error.pattern" class="alert alert-danger">
+			Por favor, preencha a data no formato DD/MM/AAAA!
+		</div>
+		
+		<button class="btn btn-primary btn-block" ng-click="adicionarTarefa(tarefa)" ng-disabled="tarefaForm.$invalid">Adicionar Tarefas</button>
+		<button class="btn btn-danger btn-block" ng-click="limparTarefa(tarefas)" >Limpar Tarefas</button>
+	</div>
+</body>
+ </html>
