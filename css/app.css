@@ -1,49 +1,44 @@
+/*class jumbotron, onde ficara a agenda de tarefas*/
 .jumbotron {
 	width: 600px;
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
 }
+
+/*class table com 20px abaixo do top*/
 .table {
 	margin-top: 20px;
 }
 
+/*adicionando uma coloracao ao background */
 body {
-	background-image: url("http://og.infg.com.br/in/20273152-80c-5df/FT1500A/550/2013_667858657-2013112796509.jpg_20131129.jpg");
+	background-color: #708090;
 }
 
+/*quando uma tarefa for selecionada, o background mudara de cor*/
 .selecionado {
 	background-color: #696969;
 }
 
+/*adicionando uma distancia de 5px entre as caixas de input*/
 .form-control {
 	margin-bottom: 5px;
 }
 
+/*quando uma tarefa for selecionada, sua fonte ficara em negrito*/
 .negrito {
 	font-weight: bold;
 }
 
+/*background da barra de tarefas*/
 .progress {
 	background-color: #D3D3D3;
 }
 
+/*background da barra de tarefas quando houver porcentagem maior que zero*/
 .progress-bar {
 	background-color: #006400;
-}
-
-h3 {
-	margin-bottom: 20px;
-}
-
-h4 {
-	text-align: left;
-	margin-bottom: 20px;
-	margin-top: 20px;
-}
-
-hr {
-	border-color: #999;
 }
 
 .menu {
@@ -53,6 +48,25 @@ hr {
 	text-align: center;
 }
 
+.active {
+    background-color: #4CAF50;
+}
+
+/*distancia entre a tag h3 e o margin de baixo*/
+h3 {
+	margin-bottom: 20px;
+}
+
+/*alinhar texto que mostra o total de tarefas concluido e acompletar
+a esquerda e com margin de 20px do top*/
+h4 {
+	text-align: left;
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+
+/*aqui eh definido o tamanho da margin e do padding do menu e a cor do background*/
 ul {
     list-style-type: none;
     margin: 0;
@@ -61,10 +75,12 @@ ul {
     background-color: #333;
 }
 
+/*alinha o menu a esquerda*/
 li {
     float: left;
 }
 
+/*aqui eh estilizado toda a parte de menu*/
 li a {
     display: block;
     color: white;
@@ -74,10 +90,7 @@ li a {
 	
 }
 
+/*muda a cor do hover quando um item do menu eh clicado*/
 li a:hover:not(.active) {
     background-color: #111;
-}
-
-.active {
-    background-color: #4CAF50;
 }

@@ -7,11 +7,14 @@ angular.module("agendaDeTarefas").controller("listaTelefonicaCtrl", function ($s
 		{nome: "Jogar", data: new Date()}
 	];
 
+	/*funcao para adiconar tarefas a lista*/
 	$scope.adicionarTarefa = function(tarefa) {
 		$scope.tarefas.push(angular.copy(tarefa));
 		delete $scope.tarefa;
 		$scope.tarefaForm.$setPristine();
 	};
+	
+	/*funcao para remover todas as tarefas da lista*/
 	$scope.limparTarefa = function(tarefas) {
 		$scope.tarefas.length = 0;
 		$scope.tarefas = tarefas.filter(function(tarefa){
@@ -19,23 +22,25 @@ angular.module("agendaDeTarefas").controller("listaTelefonicaCtrl", function ($s
 		});
 	};
 	
-	$scope.isTarefaSelecionada = function(tarefas){
-		return tarefas.some(function(tarefa){
-			return tarefa.selecionado;
-		});
-	};
-	
+	/*funcao para remover item*/
 	$scope.removeItem = function(tarefas) {
 		$scope.tarefas.splice(tarefas, 1);
 	}
 	
+	/*contador do numero de tarefas checadas*/
 	$scope.checkedCount = function() {
 		return $scope.tarefas.filter(function(person) {
 			return person.selecionado;
 		}).length;
 	}
 	
+	/*faz o calculo da percentagem*/
 	$scope.percentage = function() {
-		return ($scope.checkedCount() / $scope.tarefas.length) * 100;
+		if($scope.tarefas.length > 0){
+			return ($scope.checkedCount() / $scope.tarefas.length) * 100;
+		}
+		else{
+			return 0;
+		}
 	}
 });
