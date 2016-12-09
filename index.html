@@ -11,25 +11,24 @@
 	<div class="menu">
 		<ul>
 			<li><a class="active" href="#home">Home</a></li>
-			<li><a href="https://github.com/wesleycabral/#contact" target="_blank">Contact</a></li>
-			<h3>{{app}}</h3>
+			<li><a href="https://github.com/wesleycabral/#contato" target="_blank">Contato</a></li>
+			<li><a href="#sobre">Sobre</a></li>
 		</ul>		
 	</div>
 	
 	<div class="jumbotron">
+		<h3>{{app}}</h3>
 		<table ng-show="tarefas.length > 0" class="table">
 			<tr>
 				<th></th>
 				<th>Tarefa</th>
 				<th>Data</th>
-				<!--<th>Hora</th>-->
 				<th></th>
 			</tr>
 			<tr ng-class="{'selecionado negrito': tarefa.selecionado}" ng-repeat="tarefa in tarefas">
 				<td><input type="checkbox" ng-model="tarefa.selecionado"></td>
 				<td>{{tarefa.nome | uppercase}}</td>
 				<td>{{tarefa.data | date:'dd/MM/yyyy'}}</td>
-				<!--<td>{{tarefa.data | date:'HH:mm'}}</td>-->
 				<td><span ng-click="removeItem($index)">x</span></td>
 		</table>
 		<hr/>
@@ -41,7 +40,7 @@
 		<div class="progress" >
 			<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="{{percentage()}}" 
 				aria-valuemin="0" aria-valuemax="100" ng-style="{width : ( percentage() + '%' ) }">
-				<span id="percentage">{{percentage()}}%</span>
+				<span>{{percentage()}}%</span>
 			</div>
 		</div>
 		<div><h4>Total de Tarefas Concluidas: {{checkedCount()}}</h4></div>
